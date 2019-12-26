@@ -15,8 +15,21 @@ public class AnswerFor5Type1 {
         return address.replaceAll("\\.","[.]");
     }
 
+    public static String defangIPaddr1(String address) {
+        StringBuffer bf = new StringBuffer();
+        for(int i=0;i<address.length();i++){
+            char c = address.charAt(i);
+            if(c != '.'){
+                bf.append(c);
+            }else{
+                bf.append("["+c+"]");
+            }
+        }
+        return bf.toString();
+    }
+
     public static void main(String[] args) {
         System.out.println(defangIPaddr("55.100.50.0"));
-
+        System.out.println(defangIPaddr1("55.100.50.0"));
     }
 }
