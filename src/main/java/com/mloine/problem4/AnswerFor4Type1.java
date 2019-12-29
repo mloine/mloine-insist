@@ -16,6 +16,7 @@ public class AnswerFor4Type1 {
      * @return
      */
     public int subtractProductAndSum(int n) {
+
         //1.如果是个位数直接返回0
         int zero = 0;
         int ten = 10;
